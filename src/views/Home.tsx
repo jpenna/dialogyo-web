@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Dyo from '../components/Dyo'
+import Dyo from '@/components/Dyo';
 
 export default function Home() {
   return (
