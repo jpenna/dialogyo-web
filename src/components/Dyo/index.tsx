@@ -1,12 +1,11 @@
 import React from 'react';
-
-import Dyo from '../components/Dyo'
+import { DatePicker } from 'antd';
 
 export default function Home() {
   return (
     <div>
-      I am at home
-      <Dyo />
+      I am a Dyo
+      <DatePicker />
     </div>
   )
 }
