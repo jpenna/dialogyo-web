@@ -341,6 +341,7 @@ module.exports = function(webpackEnv) {
                 ),
 
                 plugins: [
+                  ['babel-plugin-import', { "libraryName": "antd", "style": true }],
                   [
                     require.resolve('babel-plugin-named-asset-import'),
                     {
@@ -449,6 +450,20 @@ module.exports = function(webpackEnv) {
                 },
                 'sass-loader'
               ),
+            },
+            // LESS support, included for antd
+            {
+              test: /\.less$/,
+              use: [{
+                loader: "style-loader"
+              }, {
+                loader: "css-loader"
+              }, {
+                loader: "less-loader",
+                options: {
+                  javascriptEnabled: true
+                }
+              }],
             },
             // "file" loader makes sure those assets get served by WebpackDevServer.
             // When you `import` an asset, you get its (virtual) filename.
