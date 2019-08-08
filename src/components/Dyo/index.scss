@@ -1,9 +1,18 @@
-.dyos-list {
-  .ant-spin-container {
-    overflow-x: auto;
+.dyo {
+  width: 100%;
+  padding: 0 20px;
+
+  .dyos-list {
+    .ant-spin-container {
+      overflow-x: auto;
+    }
+
+    .ant-list-items {
+      display: inline-flex;
+    }
   }
 
-  .ant-list-items {
-    display: inline-flex;
+  .ant-comment-content-author {
+    justify-content: space-between;
   }
 }

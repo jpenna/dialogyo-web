@@ -1,5 +1,5 @@
 import React from 'react';
-import { Comment, Icon, Tooltip, Avatar, List } from 'antd';
+import { Comment, Icon, Tooltip, Avatar, List, Tag } from 'antd';
 import moment from 'moment';
 import styled from 'styled-components';
 
@@ -21,11 +21,6 @@ const CommentStyled = styled(Comment)`
   width: 100%;
 `;
 
-const DyoStyled = styled.div`
-  width: 100%;
-  padding: 0 20px;
-`;
-
 const AvatarStyled = styled(Avatar)`
   border: solid 1px #cecece;
   width: 45px;
@@ -36,7 +31,7 @@ export default function Dyo(props: DyoProps) {
   const { author, body, headline, mode, dyosList } = props;
 
   return (
-    <DyoStyled>
+    <div className="dyo">
       <CommentStyled
         author={author.name}
         avatar={
@@ -44,7 +39,15 @@ export default function Dyo(props: DyoProps) {
         }
         content={
           <>
-            <h3>{headline}</h3>
+            <div className="d-flex" style={{ alignItems: 'baseline' }}>
+              <Tag
+                color={mode === 'private' ? '#f6a62a' : '#325aeb'}
+                className="capitalize"
+              >
+                {mode}
+              </Tag>
+              <h3 className="fw-600">{headline}</h3>
+            </div>
             <p className="mb-0">{body}</p>
           </>
         }
@@ -55,21 +58,22 @@ export default function Dyo(props: DyoProps) {
         }
       />
 
-      <h3>{mode}</h3>
-
       {dyosList.length > 0 ? (
-        <List
-          className="dyos-list"
-          // grid={{ gutter: 16, column: 4 }}
-          dataSource={dyosList}
-          split={false}
-          renderItem={dyo => (
-            <List.Item className="d-inline-block mr-15 bb-0">
-              <AvatarStyled src={dyo.avatar} />
-            </List.Item>
-          )}
-        />
+        <div>
+          <h3>{dyosList.length} Dyos</h3>
+          <List
+            className="dyos-list"
+            // grid={{ gutter: 16, column: 4 }}
+            dataSource={dyosList}
+            split={false}
+            renderItem={dyo => (
+              <List.Item className="d-inline-block mr-15 bb-0">
+                <AvatarStyled src={dyo.avatar} />
+              </List.Item>
+            )}
+          />
+        </div>
       ) : null}
-    </DyoStyled>
+    </div>
   );
 }

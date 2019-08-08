@@ -168,6 +168,10 @@ $width: 25 50 75 100;
   font-variant: small-caps !important;
 }
 
+.capitalize {
+  text-transform: capitalize;
+}
+
 .separate-list {
   &:not(:first-of-type) {
     margin-top: 30px;
