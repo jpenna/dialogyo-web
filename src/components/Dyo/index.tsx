@@ -1,7 +1,9 @@
 import React from 'react';
-import { Comment, Icon, Tooltip, Avatar } from 'antd';
+import { Comment, Icon, Tooltip, Avatar, List } from 'antd';
 import moment from 'moment';
 import styled from 'styled-components';
+
+import './index.scss';
 
 export interface DyoProps {
   author: {
@@ -10,6 +12,8 @@ export interface DyoProps {
   };
   body: string;
   headline: string;
+  mode: string;
+  dyosList: { avatar: string }[]
 }
 
 const CommentStyled = styled(Comment)`
@@ -17,11 +21,22 @@ const CommentStyled = styled(Comment)`
   width: 100%;
 `;
 
+const DyoStyled = styled.div`
+  width: 100%;
+  padding: 0 20px;
+`;
+
+const AvatarStyled = styled(Avatar)`
+  border: solid 1px #cecece;
+  width: 45px;
+  height: 45px;
+`
+
 export default function Dyo(props: DyoProps) {
-  const { author, body, headline } = props;
+  const { author, body, headline, mode, dyosList } = props;
 
   return (
-    <>
+    <DyoStyled>
       <CommentStyled
         author={author.name}
         avatar={
@@ -39,6 +54,22 @@ export default function Dyo(props: DyoProps) {
           </Tooltip>
         }
       />
-    </>
+
+      <h3>{mode}</h3>
+
+      {dyosList.length > 0 ? (
+        <List
+          className="dyos-list"
+          // grid={{ gutter: 16, column: 4 }}
+          dataSource={dyosList}
+          split={false}
+          renderItem={dyo => (
+            <List.Item className="d-inline-block mr-15 bb-0">
+              <AvatarStyled src={dyo.avatar} />
+            </List.Item>
+          )}
+        />
+      ) : null}
+    </DyoStyled>
   );
 }

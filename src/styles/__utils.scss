@@ -1,8 +1,12 @@
 $spaceAmounts: (0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 75, 100); // Adjust this to include the pixel amounts you need.
 $sides: (top, bottom, left, right); // Leave this variable alone
 
-@each $space in $spaceAmounts {
-  @each $side in $sides {
+@each $side in $sides {
+  .b#{str-slice($side, 0, 1)}-0 {
+    border-#{$side}: 0 !important;
+  }
+
+  @each $space in $spaceAmounts {
     .m#{str-slice($side, 0, 1)}-#{$space} {
       margin-#{$side}: #{$space}px !important;
     }
@@ -10,6 +14,7 @@ $sides: (top, bottom, left, right); // Leave this variable alone
     .p#{str-slice($side, 0, 1)}-#{$space} {
       padding-#{$side}: #{$space}px !important;
     }
+
   }
 }
 

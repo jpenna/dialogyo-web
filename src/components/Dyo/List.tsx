@@ -4,40 +4,7 @@ import styled from 'styled-components';
 
 import Dyo from './index';
 
-const data = [
-  {
-    headline: 'My Title',
-    body: 'Ant Design body 1',
-    author: {
-      name: 'Dupty Dup',
-      avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png'
-    }
-  },
-  {
-    headline: 'My Title',
-    body: 'Ant Design body 2',
-    author: {
-      name: 'Dupty Dup',
-      avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png'
-    }
-  },
-  {
-    headline: 'My Title',
-    body: 'Ant Design body 3',
-    author: {
-      name: 'Dupty Dup',
-      avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png'
-    }
-  },
-  {
-    headline: 'My Title',
-    body: 'Ant Design body 4',
-    author: {
-      name: 'Dupty Dup',
-      avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png'
-    }
-  },
-];
+import data from './data';
 
 export default function DyoList() {
   return (
