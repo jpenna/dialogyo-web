@@ -29,6 +29,7 @@ export default [
     },
     mode: 'private',
     dyosList: [...dyosList].splice(9),
+    tags: ['styling', 'css', 'theming', 'provider', 'web design', 'computer life'],
   },
   {
     headline: 'My Title',
@@ -39,6 +40,7 @@ export default [
     },
     mode: 'public',
     dyosList,
+    tags: ['design', 'style', 'sketch skills'],
   },
   {
     headline: 'My Title',
@@ -51,15 +53,24 @@ export default [
     },
     mode: 'public',
     dyosList: [],
+    tags: ['word', 'english', 'add on'],
   },
   {
     headline: 'My Title',
-    body: 'Arduino is a single-board microcontroller. It is intended to make the application of interactive objects or environments more accessible. The hardware consists of an open-source hardware board designed around an 8-bit Atmel AVR microcontroller, or a 32-bit Atmel ARM. Here, we are listing out some of the best and very useful Arduino project ideas which are collected from different resources and are very interesting to implement them. Recommended read: Arduino Starter Kits.',
+    body: `Wooden Arduino Knocking Calculator: This is a mathematical invention made by using Arduino. In this project we design a calculator by implementing the knock sensor (sound sensor) in a wooden box. To perform the mathematical operations, we run the Arduino program in computer.
+    Smartwatch Prototype Turns Your Wrist into a Joystick: Smart watches can be used as an alternative to the smart phones. But for operating these smart watches it is necessary to use another hand. So, an interactive smart watch that can be controlled using gestures of the hand to which it is held is shown here. This contains several IR sensors, piezo vibration sensor and an Arduino board.
+    This Arduino G Meter Shows How Fast Your Car Really Is!: This project shows how fast your car is driving. It uses Arduino along with acceleration sensor. This project shows how many G’s that this car is pulling.
+    Smoke Detection using MQ-2 Gas Sensor: Smoke detection is done using MQ2 smoke sensor. When the smoke level greater than a certain level, a buzzer starts ringing and a red LED is switched ON.
+    Ultrasonic Map-Maker using an Arduino Yun: This project uses ultrasonic sensor and Arduino. This sensor transmits ultrasonic waves and if nay obstacle is present it reflects back. Arduino calculates the distance between the obstacle by using the time taken by the waves to reflect back. Servo motor rotates the sensor at particular angle.
+    Reef Controller: Reef/aquarium maintenance is bit difficult task. This system allows the user to monitor the temperature, lighting etc of the tank. Arduino sends the status of these sensors the user, accordingly user can control these parameters.
+    Automatic Pet Watering System: The automatic pet watering system, monitors the water level in the tub. If the water level is below the fixed, it automatically fills water into it. Water level is sensed using ultrasonic sensor.
+    Arduino Based Distance Sensor: Arduino based distance sensor uses 2 sensors along with Arduino. The two sensors are infrared proximity sensor and ultrasonic range finding sensor. The IR sensor has a light source, which bounces the infrared light from the objects to the sensor. The ultrasonic range finer sensor produces the high frequency sound waves and calculates the echo time, to determine the distance.`,
     author: {
       name: 'Huffle Morg',
       avatar: `https://api.adorable.io/avatars/70/${avatarId++}`
     },
     mode: 'private',
     dyosList: [...dyosList].splice(10),
+    tags: ['arduino', 'iot', 'microcontroller', 'dit', 'arm', 'geek style', '8-bit atmel', 'arduino starter kit'],
   },
 ];

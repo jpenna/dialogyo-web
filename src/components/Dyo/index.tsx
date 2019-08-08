@@ -13,7 +13,8 @@ export interface DyoProps {
   body: string;
   headline: string;
   mode: string;
-  dyosList: { avatar: string }[]
+  dyosList: { avatar: string }[];
+  tags: string[];
 }
 
 const CommentStyled = styled(Comment)`
@@ -28,10 +29,13 @@ const AvatarStyled = styled(Avatar)`
 `
 
 export default function Dyo(props: DyoProps) {
-  const { author, body, headline, mode, dyosList } = props;
+  const { author, body, headline, mode, dyosList, tags } = props;
 
   return (
     <div className="dyo">
+
+      {tags.map(tag => <Tag color="#bbb">{tag}</Tag>)}
+
       <CommentStyled
         author={author.name}
         avatar={
