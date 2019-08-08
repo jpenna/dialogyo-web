@@ -1,12 +1,11 @@
 import React from 'react';
 
-import Dyo from '@/components/Dyo';
+import DyoList from '@/components/Dyo/List';
 
 export default function Home() {
   return (
-    <div>
-      I am at home
-      <Dyo />
-    </div>
+    <>
+      <DyoList />
+    </>
   )
 }
