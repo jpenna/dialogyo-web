@@ -1,18 +1,20 @@
 import React from 'react';
 import { List } from 'antd';
 
-import Dyo from './index';
+import Dyo from './Dyo';
 
 import data from './data';
+
+import './List.scss';
 
 export default function DyoList() {
   return (
     <List
-      style={{ padding: '0 20px' }}
+      className="dyos-list"
       itemLayout="horizontal"
       dataSource={data}
       renderItem={item => (
-        <List.Item>
+        <List.Item className="dyo-item">
           <Dyo {...item} />
         </List.Item>
       )}

@@ -1,0 +1,11 @@
+.dyos-list {
+  padding: 0 20px;
+
+  .dyo-item:not(:first-of-type) {
+    padding: 40px 0;
+  }
+
+  .dyo-item:first-of-type {
+    padding-bottom: 20px;
+  }
+}

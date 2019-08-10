@@ -3,7 +3,9 @@ import { Comment, Tooltip, Avatar, List, Tag } from 'antd';
 import moment from 'moment';
 import styled from 'styled-components';
 
-import './index.scss';
+import { tagColors } from '@/consts';
+
+import './Dyo.scss';
 
 export interface DyoProps {
   author: {
@@ -34,7 +36,7 @@ export default function Dyo(props: DyoProps) {
   return (
     <div className="dyo">
 
-      {tags.map(tag => <Tag color="#bbb">{tag}</Tag>)}
+      {tags.map(tag => <Tag color={tagColors[tag.length % 11]}>{tag}</Tag>)}
 
       <CommentStyled
         author={author.name}
