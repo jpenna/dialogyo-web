@@ -1,5 +1,5 @@
 import React from 'react';
-import { Comment, Icon, Tooltip, Avatar, List, Tag } from 'antd';
+import { Comment, Tooltip, Avatar, List, Tag } from 'antd';
 import moment from 'moment';
 import styled from 'styled-components';
 
@@ -18,7 +18,7 @@ export interface DyoProps {
 }
 
 const CommentStyled = styled(Comment)`
-  max-width: 700px;
+  padding-left: 20px;
   width: 100%;
 `;
 
@@ -52,7 +52,7 @@ export default function Dyo(props: DyoProps) {
               </Tag>
               <h3 className="fw-600">{headline}</h3>
             </div>
-            <p className="mb-0">{body}</p>
+            <p className="dyo-body">{body}</p>
           </>
         }
         datetime={

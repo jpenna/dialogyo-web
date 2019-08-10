@@ -5,14 +5,20 @@ import './App.scss';
 
 import Home from './views/Home';
 
-const { Content } = Layout;
+const { Header, Content, Sider } = Layout;
 
 const App: React.FC = () => {
   return (
     <Layout>
-      <Content className="main-content">
-        <Home />
-      </Content>
+      <Sider className="main-sider" />
+
+      <Layout style={{ marginLeft: 200 }}>
+        <Header className="main-header" />
+
+        <Content>
+          <Home />
+        </Content>
+      </Layout>
     </Layout>
   );
 }

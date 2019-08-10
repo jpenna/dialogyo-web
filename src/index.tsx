@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom';
 
 import * as serviceWorker from './serviceWorker';
 
-import '@/styles/index.scss';
-
 import App from './App';
+
+// Important to get styles after App.tsx
+import '@/styles/index.scss';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
