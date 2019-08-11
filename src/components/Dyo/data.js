@@ -19,6 +19,7 @@ const dyosList = [
 
 export default [
   {
+    id: '129vn',
     headline: 'My Title',
     body: `Read more about how to adapt styling based on props in the Adapting based on props section.
 
@@ -32,6 +33,7 @@ export default [
     tags: ['styling', 'css', 'theming', 'provider', 'web design', 'computer life'],
   },
   {
+    id: '19vn',
     headline: 'My Title',
     body: 'We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.',
     author: {
@@ -43,6 +45,7 @@ export default [
     tags: ['design', 'style', 'sketch skills'],
   },
   {
+    id: '12vn',
     headline: 'My Title',
     body: `third-person singular simple present adds on, present participle adding on, simple past and past participle added on)
     To incorporate (something extra, often an amount of money) into something else (often a bill).
@@ -56,6 +59,7 @@ export default [
     tags: ['word', 'english', 'add on'],
   },
   {
+    id: '129v',
     headline: 'My Title',
     body: `Wooden Arduino Knocking Calculator: This is a mathematical invention made by using Arduino. In this project we design a calculator by implementing the knock sensor (sound sensor) in a wooden box. To perform the mathematical operations, we run the Arduino program in computer.
     Smartwatch Prototype Turns Your Wrist into a Joystick: Smart watches can be used as an alternative to the smart phones. But for operating these smart watches it is necessary to use another hand. So, an interactive smart watch that can be controlled using gestures of the hand to which it is held is shown here. This contains several IR sensors, piezo vibration sensor and an Arduino board.

@@ -13,6 +13,7 @@ export default function DyoList() {
       className="dyos-list"
       itemLayout="horizontal"
       dataSource={data}
+      rowKey="id"
       renderItem={item => (
         <List.Item className="dyo-item">
           <Dyo {...item} />

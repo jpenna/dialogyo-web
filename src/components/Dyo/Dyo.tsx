@@ -3,7 +3,7 @@ import { Comment, Tooltip, Avatar, List, Tag } from 'antd';
 import moment from 'moment';
 import styled from 'styled-components';
 
-import { tagColors } from '@/consts';
+import { tagColors } from '@/utils/consts';
 
 import './Dyo.scss';
 
@@ -30,13 +30,21 @@ const AvatarStyled = styled(Avatar)`
   height: 45px;
 `
 
+function DyoTag({ tag }: { tag: string }) {
+  return (
+    <Tag color={tagColors[tag.length % 11]}>
+      {tag}
+    </Tag>
+  );
+}
+
 export default function Dyo(props: DyoProps) {
   const { author, body, headline, mode, dyosList, tags } = props;
 
   return (
     <div className="dyo">
 
-      {tags.map(tag => <Tag color={tagColors[tag.length % 11]}>{tag}</Tag>)}
+      {tags.map(tag => <DyoTag key={tag} tag={tag} />)}
 
       <CommentStyled
         author={author.name}
@@ -72,6 +80,7 @@ export default function Dyo(props: DyoProps) {
             // grid={{ gutter: 16, column: 4 }}
             dataSource={dyosList}
             split={false}
+            rowKey="id"
             renderItem={dyo => (
               <List.Item className="d-inline-block mr-15 bb-0">
                 <AvatarStyled src={dyo.avatar} />
