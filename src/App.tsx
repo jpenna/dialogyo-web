@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout } from 'antd';
+import { Layout, Button } from 'antd';
 
 import './App.scss';
 
@@ -13,7 +13,9 @@ const App: React.FC = () => {
       <Sider className="main-sider" />
 
       <Layout style={{ marginLeft: 200 }}>
-        <Header className="main-header" />
+        <Header className="main-header">
+          <Button icon="message">New Topic</Button>
+        </Header>
 
         <Content>
           <Home />

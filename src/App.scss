@@ -1,7 +1,3 @@
-.ant-layout {
-  background: white;
-}
-
 .main-sider {
   overflow: auto;
   height: 100vh;
@@ -15,4 +11,8 @@
   border-bottom: solid 1px lightgray;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
   margin-bottom: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
