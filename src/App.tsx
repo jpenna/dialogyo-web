@@ -37,7 +37,7 @@ const App: React.FC = () => {
           <Router>
             <Route path="/" component={Home} />
             <Route path="/new-topic" component={NewTopic} />
-            {/* Add not found */}
+            {/* TODO Add not found */}
           </Router>
         </Content>
       </Layout>
