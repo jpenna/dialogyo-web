@@ -1,4 +1,4 @@
-import React, { useEffect, FormEvent, useCallback } from 'react';
+import React, { FormEvent } from 'react';
 import { Form, Icon, Input, Button, Radio, Tooltip, Avatar, Typography } from 'antd';
 import { FormComponentProps } from 'antd/es/form';
 
@@ -17,16 +17,7 @@ function hasErrors(fieldsError: any) {
 }
 
 function NewTopic(props: NewTopicProps) {
-  const { getFieldDecorator, getFieldsError, getFieldError, isFieldTouched } = props.form;
-
-  useEffect(() => {
-    props.form.validateFields(); // To disabled submit button at the beginning.
-  }, []);
-
-  const fieldHasErrors = useCallback((fieldName: string) => {
-    // Only show error after a field is touched.
-    return (isFieldTouched(fieldName) && getFieldError(fieldName) && 'error') || '';
-  }, [])
+  const { getFieldDecorator, getFieldsError } = props.form;
 
   function handleSubmit(event: FormEvent<{}>) {
     event.preventDefault();
@@ -45,15 +36,13 @@ function NewTopic(props: NewTopicProps) {
       </div>
 
       <Form
+        autoComplete="off"
         onSubmit={handleSubmit}
         layout="horizontal"
-
         colon={false}
       >
         <Form.Item
           label="Headline"
-          validateStatus={fieldHasErrors('headline')}
-          help={fieldHasErrors('headline') || ''}
         >
           {getFieldDecorator('headline')(
             <Input
@@ -65,15 +54,14 @@ function NewTopic(props: NewTopicProps) {
 
         <Form.Item
           label="Content"
-          validateStatus={fieldHasErrors('content')}
-          help={fieldHasErrors('content') || ''}
         >
           {getFieldDecorator('content', {
             rules: [{
               required: true,
               min: 10,
               message: 'Say something...',
-            }]
+            }],
+            validateTrigger: "onBlur",
           })(
             <TextArea
               placeholder="These are my thoughts..."
@@ -91,8 +79,6 @@ function NewTopic(props: NewTopicProps) {
               </Tooltip>
             </span>
           }
-          validateStatus={fieldHasErrors('privacy')}
-          help={fieldHasErrors('privacy') || ''}
         >
           {getFieldDecorator('privacy', { initialValue: '*' })(
             <Radio.Group buttonStyle="solid">
@@ -111,14 +97,13 @@ function NewTopic(props: NewTopicProps) {
               </Tooltip>
             </span>
           }
-          validateStatus={fieldHasErrors('tags')}
-          help={fieldHasErrors('tags') || ''}
         >
           {getFieldDecorator('tags', {
             initialValue: [],
             rules: [{
               required: true,
             }],
+            validateTrigger: "onBlur",
           })(
             <Input />,
           )}
