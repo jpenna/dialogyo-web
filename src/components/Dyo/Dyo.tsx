@@ -1,7 +1,6 @@
 import React from 'react';
 import { Comment, Tooltip, Avatar, List, Tag } from 'antd';
 import moment from 'moment';
-import styled from 'styled-components';
 
 import { tagColors } from '@/utils/consts';
 
@@ -19,17 +18,6 @@ export interface DyoProps {
   tags: string[];
 }
 
-const CommentStyled = styled(Comment)`
-  padding-left: 20px;
-  width: 100%;
-`;
-
-const AvatarStyled = styled(Avatar)`
-  border: solid 1px #cecece;
-  width: 45px;
-  height: 45px;
-`
-
 function DyoTag({ tag }: { tag: string }) {
   return (
     <Tag color={tagColors[tag.length % 11]}>
@@ -46,7 +34,8 @@ export default function Dyo(props: DyoProps) {
 
       {tags.map(tag => <DyoTag key={tag} tag={tag} />)}
 
-      <CommentStyled
+      <Comment
+        className="comment"
         author={author.name}
         avatar={
           <Avatar src={author.avatar} />
@@ -83,7 +72,7 @@ export default function Dyo(props: DyoProps) {
             rowKey="id"
             renderItem={dyo => (
               <List.Item className="d-inline-block mr-15 bb-0">
-                <AvatarStyled src={dyo.avatar} />
+                <Avatar src={dyo.avatar} className="avatar" />
               </List.Item>
             )}
           />
