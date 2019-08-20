@@ -1,6 +1,8 @@
-import React, { FormEvent } from 'react';
+import React, { FormEvent, useCallback } from 'react';
 import { Form, Icon, Input, Button, Radio, Tooltip, Avatar, Typography } from 'antd';
 import { FormComponentProps } from 'antd/es/form';
+
+import TagsList from '@/components/Tags/TagsList';
 
 import './NewTopic.scss';
 
@@ -19,14 +21,14 @@ function hasErrors(fieldsError: any) {
 function NewTopic(props: NewTopicProps) {
   const { getFieldDecorator, getFieldsError } = props.form;
 
-  function handleSubmit(event: FormEvent<{}>) {
+  const handleSubmit = useCallback((event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     props.form.validateFields((err, values) => {
       if (!err) {
         console.log('Received values of form: ', values);
       }
     });
-  };
+  }, [props.form]);
 
   return (
     <section className="new-topic">
@@ -105,7 +107,7 @@ function NewTopic(props: NewTopicProps) {
             }],
             validateTrigger: "onBlur",
           })(
-            <Input />,
+            <TagsList />,
           )}
         </Form.Item>
 
