@@ -1,10 +1,20 @@
 import React, { useEffect, useCallback, useRef, useState, RefObject, forwardRef } from 'react';
 import { Tag, Input, Icon } from 'antd';
 
-export default forwardRef((props: {}, ref) => {
+interface Props {
+  'data-__field': { name: string };
+  'data-__meta': {};
+  id: string;
+  onBlur: () => {};
+  onChange(tags: string[]): () => {};
+  value: string[];
+};
+
+export default forwardRef((props: Props, ref) => {
+  const { value: tags, onChange: setTags } = props;
+
   const inputElem = useRef(null) as RefObject<Input>;
 
-  const [tags, setTags] = useState([] as string[]);
   const [inputVisible, setInputVisible] = useState(false);
   const [inputValue, setInputValue] = useState('');
 
@@ -13,7 +23,7 @@ export default forwardRef((props: {}, ref) => {
       const filtered = tags.filter(tag => tag !== removedTag);
       setTags(filtered);
     },
-    [tags]
+    [tags, setTags]
   );
 
   useEffect(() => {
@@ -38,7 +48,7 @@ export default forwardRef((props: {}, ref) => {
       setInputVisible(true);
       setInputValue('');
     },
-    [tags, inputValue],
+    [tags, inputValue, setTags],
   );
 
   return (

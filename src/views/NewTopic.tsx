@@ -94,7 +94,7 @@ function NewTopic(props: NewTopicProps) {
           label={
             <span>
               Tags&nbsp;
-              <Tooltip title="Select at least 3 tags to make your content visible to others.">
+              <Tooltip title="Include at least 3 tags to make your content visible to others.">
                 <Icon type="info-circle" />
               </Tooltip>
             </span>
@@ -104,9 +104,12 @@ function NewTopic(props: NewTopicProps) {
             initialValue: [],
             rules: [{
               required: true,
+              min: 3,
+              message: "Include at least 3 tags",
             }],
             validateTrigger: "onBlur",
           })(
+            // @ts-ignore: props will be injected
             <TagsList />,
           )}
         </Form.Item>
