@@ -17,6 +17,79 @@ const dyosList = [
   { avatar: `https://api.adorable.io/avatars/70/${avatarId++}` },
 ]
 
+const repliesList = [
+  {
+    avatar: `https://api.adorable.io/avatars/70/${avatarId++}`,
+    body: "I don't agree with you...",
+    name: 'Dupty Dup',
+  },
+  {
+    avatar: `https://api.adorable.io/avatars/70/${avatarId++}`,
+    body: "Pass a “create” function and an array of dependencies. useMemo will only recompute the memoized value when one of the dependencies has changed. This optimization helps to avoid expensive calculations on every render.",
+    name: 'Break Cheese',
+  },
+  {
+    avatar: `https://api.adorable.io/avatars/70/${avatarId++}`,
+    body: "Yeaaaahhh!",
+    name: 'Grizzly Bear',
+  },
+  {
+    avatar: `https://api.adorable.io/avatars/70/${avatarId++}`,
+    body: "useRef returns a mutable ref object whose .current property is initialized to the passed argument (initialValue)",
+    name: 'Huffle Morg',
+  },
+  {
+    avatar: `https://api.adorable.io/avatars/70/${avatarId++}`,
+    body: "I don't have to account for anything to you.",
+    name: 'Dupty Dup',
+  },
+  {
+    avatar: `https://api.adorable.io/avatars/70/${avatarId++}`,
+    body: "The first step in freezing out competitors is to create a superior product.",
+    name: 'Break Cheese',
+  },
+  {
+    avatar: `https://api.adorable.io/avatars/70/${avatarId++}`,
+    body: "After finding out her horrible secret, the son froze his mother out of his life.",
+    name: 'Grizzly Bear',
+  },
+  {
+    avatar: `https://api.adorable.io/avatars/70/${avatarId++}`,
+    body: "The torrential downpour would account for the saturated state of the land.",
+    name: 'Huffle Morg',
+  },
+  {
+    avatar: `https://api.adorable.io/avatars/70/${avatarId++}`,
+    body: "German speakers accounted for 37% of the population.",
+    name: 'Dupty Dup',
+  },
+  {
+    avatar: `https://api.adorable.io/avatars/70/${avatarId++}`,
+    body: "Your trousers need to dry out before you put them on.",
+    name: 'Break Cheese',
+  },
+  {
+    avatar: `https://api.adorable.io/avatars/70/${avatarId++}`,
+    body: "We killed off the Dodo by over-hunting",
+    name: 'Grizzly Bear',
+  },
+  {
+    avatar: `https://api.adorable.io/avatars/70/${avatarId++}`,
+    body: "Could you bring in the groceries?",
+    name: 'Huffle Morg',
+  },
+  {
+    avatar: `https://api.adorable.io/avatars/70/${avatarId++}`,
+    body: "The authorities are trying to crack down on drunk driving during the holidays.",
+    name: 'Dupty Dup',
+  },
+  {
+    avatar: `https://api.adorable.io/avatars/70/${avatarId++}`,
+    body: "Hillary Clinton (born 1947) is an American politician, diplomat, lawyer, and writer. She was First Lady of the United States from 1993 to 2001, a U.S. senator from New York from 2001 to 2009, and the 67th secretary of state from 2009 to 2013. As a Democrat running in the 2016 presidential election, she became the first woman to receive the nomination of a major U.S. political party. Clinton was raised in the Chicago suburb of Park Ridge. She graduated from Wellesley College, and in 1973 earned a law degree from Yale, where she met future president Bill Clinton; they married in 1975. She was appointed the first female chair of the Legal Services Corporation in 1978.",
+    name: 'Huffle Morg',
+  },
+]
+
 export default [
   {
     id: '129vn',
@@ -30,6 +103,7 @@ export default [
     },
     mode: 'private',
     dyosList: [...dyosList].splice(9),
+    repliesList: [],
     tags: ['styling', 'css', 'theming', 'provider', 'web design', 'computer life'],
   },
   {
@@ -42,6 +116,7 @@ export default [
     },
     mode: 'public',
     dyosList,
+    repliesList: [...repliesList].splice(3),
     tags: ['design', 'style', 'sketch skills'],
   },
   {
@@ -56,6 +131,7 @@ export default [
     },
     mode: 'public',
     dyosList: [],
+    repliesList: [...repliesList].splice(9),
     tags: ['word', 'english', 'add on'],
   },
   {
@@ -75,6 +151,7 @@ export default [
     },
     mode: 'private',
     dyosList: [...dyosList].splice(10),
+    repliesList: [...repliesList].splice(2),
     tags: ['arduino', 'iot', 'microcontroller', 'dit', 'arm', 'geek style', '8-bit atmel', 'arduino starter kit'],
   },
 ];

@@ -16,6 +16,7 @@ export interface DyoProps {
   headline: string;
   mode: string;
   dyosList: { avatar: string }[];
+  repliesList: { avatar: string, body: string, name: string }[];
   tags: string[];
 }
 
@@ -28,7 +29,7 @@ function DyoTag({ tag }: { tag: string }) {
 }
 
 export default function Dyo(props: DyoProps) {
-  const { author, body, headline, mode, dyosList, tags } = props;
+  const { author, body, headline, mode, dyosList, tags, repliesList } = props;
 
   return (
     <div className="dyo">
@@ -62,7 +63,7 @@ export default function Dyo(props: DyoProps) {
         }
       />
 
-      {dyosList.length > 0 ? (
+      {dyosList.length > 0 && (
         <div>
           <div>
             <h3 className="d-inline-block mr-20">{dyosList.length} Dyos</h3>
@@ -85,7 +86,44 @@ export default function Dyo(props: DyoProps) {
             )}
           />
         </div>
-      ) : null}
+      )}
+
+      {repliesList.length > 0 && (
+        <div>
+          <h3 className="d-inline-block mr-20">{repliesList.length} Replies</h3>
+
+          ADD text box
+
+          <List
+            className="replies-list"
+            // grid={{ gutter: 16, column: 4 }}
+            dataSource={repliesList}
+            split={false}
+            rowKey="id"
+            renderItem={reply => (
+              <Comment
+                // actions={actions}
+                className="comment"
+                author={reply.name}
+                avatar={
+                  <Avatar src={reply.avatar} alt={reply.name} />
+                }
+                content={<p>{reply.body}</p>}
+                datetime={
+                  <Tooltip title={moment().format('YYYY-MM-DD HH:mm:ss')}>
+                    <span>{moment().fromNow()}</span>
+                  </Tooltip>
+                }
+              />
+
+              // <List.Item>
+              //   <Avatar src={reply.avatar} />
+              //   <div>{reply.body}</div>
+              // </List.Item>
+            )}
+          />
+        </div>
+      )}
     </div>
   );
 }
