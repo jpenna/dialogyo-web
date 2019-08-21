@@ -8,6 +8,7 @@ import Route from '@/utils/Route';
 
 import Home from './views/Home';
 import NewTopic from './views/NewTopic';
+import NewDyo from './views/NewDyo';
 import BackButton from './components/BackButton';
 
 const { Header, Content, Sider } = Layout;
@@ -37,6 +38,7 @@ const App: React.FC = () => {
           <Router>
             <Route path="/" component={Home} />
             <Route path="/new-topic" component={NewTopic} />
+            <Route path="/new-dyo" component={NewDyo} />
             {/* TODO Add not found */}
           </Router>
         </Content>

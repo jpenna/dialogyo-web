@@ -1,10 +1,11 @@
 import React from 'react';
-import { Comment, Tooltip, Avatar, List, Tag } from 'antd';
+import { Comment, Tooltip, Avatar, List, Tag, Button } from 'antd';
 import moment from 'moment';
 
 import { tagColors } from '@/utils/consts';
 
 import './Dyo.scss';
+import { Link } from '@reach/router';
 
 export interface DyoProps {
   author: {
@@ -63,7 +64,14 @@ export default function Dyo(props: DyoProps) {
 
       {dyosList.length > 0 ? (
         <div>
-          <h3>{dyosList.length} Dyos</h3>
+          <div>
+            <h3 className="d-inline-block mr-20">{dyosList.length} Dyos</h3>
+            <Link to="/new-dyo">
+              <Button icon="message">Start Dialog</Button>
+            </Link>
+          </div>
+
+
           <List
             className="dyos-list"
             // grid={{ gutter: 16, column: 4 }}
