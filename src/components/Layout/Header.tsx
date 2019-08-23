@@ -7,10 +7,22 @@ import BackButton from '@/components/BackButton';
 
 const { Header } = Layout;
 
-export default () => {
+interface IProps {
+  collapsed: boolean;
+  setCollapsed(value: boolean): void;
+}
+
+export default (props: IProps) => {
+  const { collapsed, setCollapsed } = props;
+
   return (
     <Header className="main-header flex-split">
       <div>
+        <Button
+          icon={collapsed ? 'menu-unfold' : 'menu-fold'}
+          onClick={() => setCollapsed(!collapsed)}
+        />
+
         <Match path="*">
           {BackButton}
         </Match>

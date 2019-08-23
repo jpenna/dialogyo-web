@@ -1,19 +1,58 @@
-.main-side-bar {
-  overflow: auto;
-  height: 100vh;
-  max-height: 100vh;
-  left: 0;
-  background: white;
-  border-right: solid 1px #ddd;
-  min-width: 200px;
-}
+@import '~@/styles/variables';
 
 .main-header {
   border-bottom: solid 1px lightgray;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
   margin-bottom: 20px;
+}
 
-  // display: flex;
-  // align-items: center;
-  // justify-content: flex-end;
+$sideBarMinWidth: 200px;
+
+.main-side-bar {
+  position: relative;
+  height: 100vh;
+  max-height: 100vh;
+  left: 0;
+  background: white;
+  border-right: solid 1px #ddd;
+  min-width: $sideBarMinWidth;
+
+  visibility: visible;
+  transition: visibility .3s, margin .3s ease-out;
+
+  @media only screen and (max-width: $md) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 1px 0 3px 1000px $shadowColor;
+    z-index: 99;
+    visibility: hidden;
+  }
+
+  .collapse-button {
+    position: absolute;
+    width: 32px;
+
+    right: -32px;
+    top: 50px;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.2s linear 0.2s;
+  }
+}
+
+.force-collapse {
+  visibility: hidden;
+  margin-left: -$sideBarMinWidth;
+}
+
+.force-show {
+  visibility: visible;
+
+  @media only screen and (max-width: $md) {
+    .collapse-button {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
 }
