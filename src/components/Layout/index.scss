@@ -1,0 +1,19 @@
+.main-side-bar {
+  overflow: auto;
+  height: 100vh;
+  max-height: 100vh;
+  left: 0;
+  background: white;
+  border-right: solid 1px #ddd;
+  min-width: 200px;
+}
+
+.main-header {
+  border-bottom: solid 1px lightgray;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+
+  // display: flex;
+  // align-items: center;
+  // justify-content: flex-end;
+}
