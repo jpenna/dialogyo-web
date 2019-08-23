@@ -1,8 +1,6 @@
-import React, { FormEvent, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { Form, Icon, Input, Button, Radio, Tooltip, Avatar, Typography } from 'antd';
 import { FormComponentProps } from 'antd/es/form';
-
-import TagsList from '@/components/Tags/TagsList';
 
 // import './NewDyo.scss';
 

@@ -102,7 +102,7 @@ export default [
       avatar: `https://api.adorable.io/avatars/70/${avatarId++}`
     },
     mode: 'private',
-    dyosList: [...dyosList].splice(9),
+    dyosList: [...dyosList].splice(0, 4),
     repliesList: [],
     tags: ['styling', 'css', 'theming', 'provider', 'web design', 'computer life'],
   },
@@ -116,7 +116,7 @@ export default [
     },
     mode: 'public',
     dyosList,
-    repliesList: [...repliesList].splice(3),
+    repliesList: [...repliesList].splice(3, 8),
     tags: ['design', 'style', 'sketch skills'],
   },
   {
@@ -131,7 +131,7 @@ export default [
     },
     mode: 'public',
     dyosList: [],
-    repliesList: [...repliesList].splice(9),
+    repliesList: [...repliesList].splice(9, 11),
     tags: ['word', 'english', 'add on'],
   },
   {
@@ -151,7 +151,7 @@ export default [
     },
     mode: 'private',
     dyosList: [...dyosList].splice(10),
-    repliesList: [...repliesList].splice(2),
+    repliesList: [...repliesList].splice(2, 10),
     tags: ['arduino', 'iot', 'microcontroller', 'dit', 'arm', 'geek style', '8-bit atmel', 'arduino starter kit'],
   },
 ];

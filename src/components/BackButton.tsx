@@ -1,15 +1,15 @@
 
 import React from 'react';
 import { Icon } from 'antd';
-import { MatchRenderProps } from '@reach/router';
+import { MatchRenderProps, Link } from '@reach/router';
 
 export default (props: MatchRenderProps<null>) => {
-  if (!/new-topic/.test(props.location.pathname)) return null;
+  if (!/new-(topic|dyo)/.test(props.location.pathname)) return null;
 
   return (
-    <a href="javascript:history.back()">
+    <Link to="/">
       <Icon type="left" />
       Back
-    </a>
+    </Link>
   );
 }
