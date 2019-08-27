@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Router } from "@reach/router";
+import { Router, Match } from "@reach/router";
 
 import './App.scss';
 
 import Route from '@/utils/Route';
 
+import BackButton from '@/components/BackButton';
 import Home from './views/Home';
 import NewTopic from './views/NewTopic';
 import NewDyo from './views/NewDyo';
@@ -24,6 +25,10 @@ const App: React.FC = () => {
         <Header setCollapsed={setCollapsed} collapsed={collapsed} />
 
         <div>
+          <Match path="*">
+            {BackButton}
+          </Match>
+
           <Router>
             <Route path="/" component={Home} />
             <Route path="/new-topic" component={NewTopic} />
