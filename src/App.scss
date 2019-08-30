@@ -1,9 +1,17 @@
-.main-container {
+.page {
   display: flex;
 }
 
-.main-area {
+.main-container {
   overflow: auto;
   max-height: 100vh;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  padding-top: 20px;
+  overflow: auto;
+  flex-grow: 1;
 }

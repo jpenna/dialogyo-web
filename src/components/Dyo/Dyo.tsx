@@ -94,7 +94,7 @@ export default function Dyo(props: DyoProps) {
       <div>
         <h3 className="d-inline-block mr-20">{dyosList.length} Dyos</h3>
         <Link to="/new-dyo">
-          <Button icon="message">Start Dialog</Button>
+          <Button icon="message">Start Dialogue</Button>
         </Link>
       </div>
 

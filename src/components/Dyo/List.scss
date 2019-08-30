@@ -1,5 +1,7 @@
 .dyos-list {
   padding: 0 20px;
+  max-width: 800px;
+  margin: auto;
 
   .dyo-item:not(:first-of-type) {
     padding: 40px 0;
