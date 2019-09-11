@@ -11,9 +11,6 @@ import NewTopic from './views/NewTopic';
 import NewDyo from './views/NewDyo';
 import { Header, SideBar } from './components/Layout';
 
-// @ts-ignore
-import styleProps from '@/components/Layout/index.scss';
-
 const App: React.FC = () => {
   // const [collapsed, setCollapsed] = useState(window.innerWidth < styleProps.md.slice(0, -2));
   const [collapsed, setCollapsed] = useState(true);
